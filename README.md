@@ -4,8 +4,7 @@
 
 The Interoperable Platform for the Instant Payment System (π-SPI) is a regional payment infrastructure designed and operated by the Central Bank of West African States (BCEAO).
 
-It enables instant fund transfers between different financial institutions across the region, including banks, electronic money issuers, microfinance institutions, and payment establishments.
-
+It enables instant fund transfers between different financial institutions across the region, including banks, electronic money issuers, microfinance institutions, and payment service providers.
 
 ## Installation
 
@@ -16,13 +15,12 @@ npm install pi-spi-sdk
 # or
 yarn add pi-spi-sdk
 ```
-π-SPI enables **cross-border transactions** within the West African Economic and Monetary Union (UEMOA), which spans eight countries: Benin, Burkina Faso, Côte d'Ivoire, Guinea-Bissau, Mali, Niger, Senegal, and Togo. 
 
-The infrastructure operates on a single currency, the XOF (West African CFA Franc), and processes payments in real-time with instant confirmation. Users can send payments using alias-based methods, which means they don't need to share their actual account numbers.
+π-SPI operates on a single currency, the XOF (West African CFA Franc), and processes payments in real-time with instant confirmation. It also enables **cross-border transactions** within the West African Economic and Monetary Union (UEMOA), which spans eight countries: Benin, Burkina Faso, Côte d'Ivoire, Guinea-Bissau, Mali, Niger, Senegal, and Togo. 
 
-**Transaction types supported:**
+Payments can flow between traditional bank accounts across UEMOA countries, from bank accounts to mobile money wallets like MTN, Orange Money, and Moov, from mobile wallets back to bank accounts, and even between mobile money wallets regardless of which provider each person uses.
 
-π-SPI supports seamless interoperability between different payment systems throughout the region. Payments can flow between traditional bank accounts across UEMOA countries, from bank accounts to mobile money wallets like MTN, Orange Money, and Moov, from mobile wallets back to bank accounts, and even between mobile money wallets regardless of which provider each person uses. All these transaction types work seamlessly through the unified infrastructure, enabling businesses and individuals to send and receive payments across different financial institutions and mobile money providers within the UEMOA region.
+To use this SDK in a production ready application, you need to be connected to a certified PI-SPI participant or PSP.
 
 ## Usage example
 
@@ -30,7 +28,7 @@ The infrastructure operates on a single currency, the XOF (West African CFA Fran
 import { PiSpiSDK } from 'pi-spi-sdk';
 
 const sdk = new PiSpiSDK({
-  baseUrl: 'https://sandbox.api.pi-bceao.com/piz/v1',
+  baseUrl: 'https://sandbox.api.pi-spi.bceao.int/piz/v1',
   accessToken: 'your-oauth2-access-token',
 });
 
@@ -48,7 +46,7 @@ const payment = await sdk.paiements.create({
 
 ## Features
 
-This SDK provides full TypeScript support with types generated from the official OpenAPI specification, ensuring type safety throughout your integration. It includes secure authentication through OAuth2 and mTLS, comprehensive coverage of all SPI endpoints, and custom error classes with detailed messages for easier debugging. The codebase is auto-generated from the official specification and includes developer-friendly utilities and constants to streamline your implementation.
+This SDK provides full TypeScript support with types generated from the official OpenAPI specification, ensuring type safety throughout your integration. It includes secure authentication through OAuth2 and mTLS, comprehensive coverage of all SPI endpoints, and custom error classes with detailed messages for easier debugging. The codebase also includes developer-friendly utilities and constants to streamline your implementation.
 
 ## Utilities & Constants
 
